@@ -18,28 +18,7 @@ class _CounterFuntionsScreenState extends State<CounterFuntionsScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Contador App'),
-        leading: IconButton(
-          onPressed: () {
-            setState(() {
-              clickCounter = 0;
-            });
-          }, 
-          icon: Icon(Icons.refresh)
-        ),
-        actions: [
-          IconButton(
-            onPressed: (){
-              setState(() {
-                clickCounter--;
-              });
-            }, icon: Icon(Icons.exposure_minus_1_rounded)
-          ),IconButton(
-            onPressed: (){
-              setState(() {
-                clickCounter++;
-              });
-            }, icon: Icon(Icons.plus_one_outlined))
-        ],
+       
       ),
       body: Center(
         child: Column(
@@ -50,15 +29,45 @@ class _CounterFuntionsScreenState extends State<CounterFuntionsScreen> {
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          setState(() {
-            clickCounter++;
-          });
+      floatingActionButton: Column(
+        mainAxisAlignment: MainAxisAlignment.end,
+        spacing: 10,
+        children: [
+          FloatingActionButton(
+
+            onPressed: () {
+            setState(() {
+            clickCounter = 0;
+             });
+            }, 
+
+            child: Icon(Icons.refresh),
+          ),
           
-        }, 
-        child: Icon(Icons.plus_one_outlined),
-      ),
+          FloatingActionButton(
+
+            onPressed: () {
+            setState(() {
+            clickCounter++;
+             });
+            }, 
+
+            child: Icon(Icons.plus_one_outlined),
+          ),
+
+           FloatingActionButton(
+
+            onPressed: () {
+            setState(() {
+              if(clickCounter == 0) return;
+              clickCounter--;
+             });
+            }, 
+
+            child: Icon(Icons.exposure_minus_1_outlined),
+          ),
+        ],
+      )
     );  
   }
 }
