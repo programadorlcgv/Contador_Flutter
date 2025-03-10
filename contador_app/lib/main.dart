@@ -1,4 +1,5 @@
-import 'package:contador_app/presentation/screens/counter_screen.dart';
+import 'package:contador_app/presentation/screens/counter_functions_screen.dart';
+// import 'package:contador_app/presentation/screens/counter_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
         colorSchemeSeed: Colors.blue
       ),
       home: Scaffold(
-        body: CounterScreen() ,
+        body: CounterFuntionsScreen() ,
       )
     );
   }
